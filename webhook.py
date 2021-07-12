@@ -2,14 +2,14 @@ import time
 import requests
 from dhooks import Webhook
 
-hook = Webhook("https://discord.com/api/webhooks/863990102765207592/h8xfhL2ksmp-u-YI3uySYTwSUcV0cfezexbcjLNlytk9srp6hnnz3ZFbyyhaoSC1vbZk")
+hook = Webhook("https://discord.com/api/webhooks/864098878671814666/Kwu2gG373bBfWIR8t40cWb36bQgKdwHr9C-YfgnqYAVIiJHT9b_CKfEbfbgjfsV4yvE2")
 url = 'http://api.openweathermap.org/data/2.5/weather?id=1264527&appid=0fd54c8d93dff4248d776d5644ef0946&units=metric'
 
 while True:
 	res = requests.get(url)
 	data = res.json()
-	weatherID1 = data['weather'][0]['id']
 	weatherID2 = weatherID1
+	weatherID1 = data['weather'][0]['id']
 	cloud = data['clouds']['all']
 
 	def arive():
