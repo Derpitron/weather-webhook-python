@@ -11,55 +11,5 @@ data = res.json()
 weather = data['weather'][0]['description']
 weatherid = data['weather'][0]['id']
 
-if weatherid != 500:
-    hook.send("THE CLOUD HAS ARIVED")
-elif weatherid != 600:
-    hook.send("THE CLOUD HAS ARIVED")
-elif weatherid != 600:
-    hook.send("THE CLOUD HAS ARIVED")
-elif weatherid != 601:
-    hook.send("THE CLOUD HAS ARIVED")
-elif weatherid != 602:
-    hook.send("THE CLOUD HAS ARIVED")
-elif weatherid != 611:
-    hook.send("THE CLOUD HAS ARIVED")
-elif weatherid != 612:
-    hook.send("THE CLOUD HAS ARIVED")
-elif weatherid != 613:
-    hook.send("THE CLOUD HAS ARIVED")
-elif weatherid != 615:
-    hook.send("THE CLOUD HAS ARIVED")
-elif weatherid != 616:
-    hook.send("THE CLOUD HAS ARIVED")
-elif weatherid != 620:
-    hook.send("THE CLOUD HAS ARIVED")
-elif weatherid != 621:
-    hook.send("THE CLOUD HAS ARIVED")
-elif weatherid != 622:
-    hook.send("THE CLOUD HAS ARIVED")
-elif weatherid != 701:
-    hook.send("THE CLOUD HAS ARIVED")
-elif weatherid != 711:
-    hook.send("THE CLOUD HAS ARIVED")
-elif weatherid != 721:
-    hook.send("THE CLOUD HAS ARIVED")
-elif weatherid != 731:
-    hook.send("THE CLOUD HAS ARIVED")
-elif weatherid != 741:
-    hook.send("THE CLOUD HAS ARIVED")
-elif weatherid != 751:
-    hook.send("THE CLOUD HAS ARIVED")
-elif weatherid != 761:
-    hook.send("THE CLOUD HAS ARIVED")
-elif weatherid != 771:
-    hook.send("THE CLOUD HAS ARIVED")
-elif weatherid != 781:
-    hook.send("THE CLOUD HAS ARIVED")
-elif weatherid != 801:
-    hook.send("THE CLOUD HAS ARIVED")
-elif weatherid != 802:
-    hook.send("THE CLOUD HAS ARIVED")
-elif weatherid != 803:
-    hook.send("THE CLOUD HAS ARIVED")
-elif weatherid != 804:
+if (weatherid != 500 or weatherid != 600 or weatherid != 601 or weatherid != 602 or weatherid != 611 or weatherid != 612 or weatherid != 613 or weatherid != 615 or weatherid != 616 or weatherid != 620 or weatherid != 621 or weatherid != 622 or weatherid != 701 or weatherid != 711 or weatherid != 721 or weatherid != 731 or weatherid != 741 or weatherid != 751 or weatherid != 761 or weatherid != 771 or weatherid != 781 or weatherid != 801 or weatherid != 802 or weatherid != 803 or weatherid != 804):
     hook.send("THE CLOUD HAS ARIVED")
