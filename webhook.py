@@ -1,6 +1,6 @@
 from dhooks import Webhook
 import requests
-hook = Webhook("https://discord.com/api/webhooks/863990102765207592/h8xfhL2ksmp-u-YI3uySYTwSUcV0cfezexbcjLNlytk9srp6hnnz3ZFbyyhaoSC1vbZk")
+hook = Webhook("https://discord.com/api/webhooks/864019084655853579/N1BAd9yGDmRg0Jk7UFyGl2y41cQTsHsjem8N-Hw3_31MxyCP678GkMiCN7CqL1suuPtM")
 
 url = 'http://api.openweathermap.org/data/2.5/weather?id=1264527&appid=0fd54c8d93dff4248d776d5644ef0946&units=metric'
 res = requests.get(url)
