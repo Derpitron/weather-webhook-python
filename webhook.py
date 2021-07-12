@@ -1,3 +1,6 @@
+import os
+os.system('pip install -r requirements.txt')
+
 from dhooks import Webhook
 import requests
 hook = Webhook("https://discord.com/api/webhooks/864019084655853579/N1BAd9yGDmRg0Jk7UFyGl2y41cQTsHsjem8N-Hw3_31MxyCP678GkMiCN7CqL1suuPtM")
