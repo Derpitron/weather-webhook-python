@@ -14,11 +14,11 @@ while True:
 
 	def rainCheck():
 		if weatherID in validWeather:
-				hook.send("THE CLOUD HAS ARIVED\nJJJJJJJJJJJJJJJJ")
+			hook.send("THE CLOUD HAS ARIVED\nJJJJJJJJJJJJJJJJ")
 
 	def send():
-			rainCheck()
-			time.sleep(1200)
+		rainCheck()
+		time.sleep(1200)
 		
 	send()
 	#Cloud Cover
