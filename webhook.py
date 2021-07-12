@@ -8,8 +8,8 @@ url = 'http://api.openweathermap.org/data/2.5/weather?id=1264527&appid=0fd54c8d9
 while True:
 	res = requests.get(url)
 	data = res.json()
-	weatherID2 = weatherID1
 	weatherID1 = data['weather'][0]['id']
+	weatherID2 = weatherID1
 	cloud = data['clouds']['all']
 
 	def arive():
