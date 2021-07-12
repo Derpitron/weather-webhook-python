@@ -9,8 +9,9 @@ while True:
 	res = requests.get(url)
 	data = res.json()
 	weatherID1 = data['weather'][0]['id']
-	weatherID2 = weatherID1
+	weatherID2 = 0
 	cloud = data['clouds']['all']
+	validWeather = ["200","201","202","210","211","212","221","2"]
 
 	def arive():
 		hook.send("THE CLOUD HAS ARIVED\nJJJJJJJJJJJJJJJJ")
@@ -82,7 +83,8 @@ while True:
 		
 	send()
 	#Cloud Cover
-	if ((cloud >= 86) and (cloud <= 100)):
+	if ((cloud >= 85) and (cloud <= 100)):
 		print("DARKNESS RISES")
 
 	time.sleep(300)
+	weatherID2 = weatherID1
