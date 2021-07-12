@@ -1,20 +1,19 @@
 import time
-
 import requests
 from dhooks import Webhook
 
 hook = Webhook("https://discord.com/api/webhooks/863990102765207592/h8xfhL2ksmp-u-YI3uySYTwSUcV0cfezexbcjLNlytk9srp6hnnz3ZFbyyhaoSC1vbZk")
-
 url = 'http://api.openweathermap.org/data/2.5/weather?id=1264527&appid=0fd54c8d93dff4248d776d5644ef0946&units=metric'
+
 res = requests.get(url)
 data = res.json()
 weatherid = data['weather'][0]['id']
 cloud = data['clouds']['all']
 
-i = 0
 timer = 5
 
 def arive():
+    i = 0
     while i <= timer:
         i += 1
         time.sleep(1)
@@ -66,9 +65,6 @@ elif (weatherid == 314):
 elif (weatherid == 321):
     arive()
 
-#Rain
-#elif (weatherid == 502):
-    #hook.send("THE CLOUD HAS ARIVED\nJJJJJJJJJJJJJJJJ20")
 elif (weatherid == 503):
     arive()
 elif (weatherid == 504):
