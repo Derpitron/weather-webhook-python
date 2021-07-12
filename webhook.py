@@ -17,13 +17,11 @@ while True:
 	
 	def rainCheck():
 		if weatherID1 in validWeather:
-    			arive()
+				arive()
 
 	def send():
-		if (weatherID1 != weatherID2):
 			rainCheck()
-
-		time.sleep(1200)
+			time.sleep(1200)
 		
 	send()
 	#Cloud Cover
@@ -31,4 +29,3 @@ while True:
 		print("DARKNESS RISES")
 
 	time.sleep(300)
-	weatherID2 = weatherID1
