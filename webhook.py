@@ -8,57 +8,68 @@ data = res.json()
 weather = data['weather'][0]['description']
 weatherid = data['weather'][0]['id']
 
-if (weatherid != 500):
+#Thunderstorm
+if (weatherid == 200):
     hook.send("THE CLOUD HAS ARIVED")
-elif (weatherid != 600):
+elif (weatherid == 201):
     hook.send("THE CLOUD HAS ARIVED2")
-elif (weatherid != 600):
+elif (weatherid == 202):
     hook.send("THE CLOUD HAS ARIVED3")
-elif (weatherid != 601):
+elif (weatherid == 210):
     hook.send("THE CLOUD HAS ARIVED4")
-elif (weatherid != 602):
+elif (weatherid == 211):
     hook.send("THE CLOUD HAS ARIVED5")
-elif (weatherid != 611):
+elif (weatherid == 212):
     hook.send("THE CLOUD HAS ARIVED6")
-elif (weatherid != 612):
+elif (weatherid == 221):
     hook.send("THE CLOUD HAS ARIVED7")
-elif (weatherid != 613):
+elif (weatherid == 230):
     hook.send("THE CLOUD HAS ARIVED8")
-elif (weatherid != 615):
+elif (weatherid == 231):
     hook.send("THE CLOUD HAS ARIVED9")
-elif (weatherid != 616):
+elif (weatherid == 232):
     hook.send("THE CLOUD HAS ARIVED10")
-elif (weatherid != 620):
+
+#Drizzle
+elif (weatherid == 300):
     hook.send("THE CLOUD HAS ARIVED11")
-elif (weatherid != 621):
+elif (weatherid == 301):
     hook.send("THE CLOUD HAS ARIVED12")
-elif (weatherid != 622):
+elif (weatherid == 302):
     hook.send("THE CLOUD HAS ARIVED13")
-elif (weatherid != 701):
+elif (weatherid == 310):
     hook.send("THE CLOUD HAS ARIVED14")
-elif (weatherid != 711):
+elif (weatherid == 311):
     hook.send("THE CLOUD HAS ARIVED15")
-elif (weatherid != 721):
+elif (weatherid == 312):
     hook.send("THE CLOUD HAS ARIVED16")
-elif (weatherid != 731):
+elif (weatherid == 313):
     hook.send("THE CLOUD HAS ARIVED17")
-elif (weatherid != 741):
+elif (weatherid == 314):
     hook.send("THE CLOUD HAS ARIVED18")
-elif (weatherid != 751):
+elif (weatherid == 321):
     hook.send("THE CLOUD HAS ARIVED19")
-elif (weatherid != 761):
+
+#Rain
+elif (weatherid == 501):
     hook.send("THE CLOUD HAS ARIVED20")
-elif (weatherid != 771):
+elif (weatherid == 502):
     hook.send("THE CLOUD HAS ARIVED21")
-elif (weatherid != 781):
+elif (weatherid == 503):
     hook.send("THE CLOUD HAS ARIVED22")
-elif (weatherid != 801):
+elif (weatherid == 504):
     hook.send("THE CLOUD HAS ARIVED23")
-elif (weatherid != 802):
+elif (weatherid == 511):
     hook.send("THE CLOUD HAS ARIVED24")
-elif (weatherid != 803):
+elif (weatherid == 520):
     hook.send("THE CLOUD HAS ARIVED25")
-elif (weatherid != 804):
+elif (weatherid == 521):
     hook.send("THE CLOUD HAS ARIVED26")
+elif (weatherid == 522):
+    hook.send("THE CLOUD HAS ARIVED27")
+elif (weatherid == 531):
+    hook.send("THE CLOUD HAS ARIVED28")
+elif (weatherid == 804):
+    hook.send("The cloud may be ariving")
 else:
-    hook.send("kill yourself")
+    hook.send("no cloud")
