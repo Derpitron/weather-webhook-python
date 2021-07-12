@@ -1,76 +1,76 @@
 from dhooks import Webhook
 import requests
-hook = Webhook("https://discord.com/api/webhooks/864019084655853579/N1BAd9yGDmRg0Jk7UFyGl2y41cQTsHsjem8N-Hw3_31MxyCP678GkMiCN7CqL1suuPtM")
+hook = Webhook("https://discord.com/api/webhooks/863990102765207592/h8xfhL2ksmp-u-YI3uySYTwSUcV0cfezexbcjLNlytk9srp6hnnz3ZFbyyhaoSC1vbZk")
 
 url = 'http://api.openweathermap.org/data/2.5/weather?id=1264527&appid=0fd54c8d93dff4248d776d5644ef0946&units=metric'
 res = requests.get(url)
 data = res.json()
 weather = data['weather'][0]['description']
 weatherid = data['weather'][0]['id']
-cloud = data['weather']['clouds']['all']
+cloud = data['clouds']['all']
 
 #Thunderstorm
 if (weatherid == 200):
-    hook.send("THE CLOUD HAS ARIVED")
+    hook.send("THE CLOUD HAS ARIVED\nJJJJJJJJJJJJJJJJ")
 elif (weatherid == 201):
-    hook.send("THE CLOUD HAS ARIVED2")
+    hook.send("THE CLOUD HAS ARIVED\nJJJJJJJJJJJJJJJJ")
 elif (weatherid == 202):
-    hook.send("THE CLOUD HAS ARIVED3")
+    hook.send("THE CLOUD HAS ARIVED\nJJJJJJJJJJJJJJJJ")
 elif (weatherid == 210):
-    hook.send("THE CLOUD HAS ARIVED4")
+    hook.send("THE CLOUD HAS ARIVED\nJJJJJJJJJJJJJJJJ")
 elif (weatherid == 211):
-    hook.send("THE CLOUD HAS ARIVED5")
+    hook.send("THE CLOUD HAS ARIVED\nJJJJJJJJJJJJJJJJ")
 elif (weatherid == 212):
-    hook.send("THE CLOUD HAS ARIVED6")
+    hook.send("THE CLOUD HAS ARIVED\nJJJJJJJJJJJJJJJJ")
 elif (weatherid == 221):
-    hook.send("THE CLOUD HAS ARIVED7")
+    hook.send("THE CLOUD HAS ARIVED\nJJJJJJJJJJJJJJJJ")
 elif (weatherid == 230):
-    hook.send("THE CLOUD HAS ARIVED8")
+    hook.send("THE CLOUD HAS ARIVED\nJJJJJJJJJJJJJJJJ")
 elif (weatherid == 231):
-    hook.send("THE CLOUD HAS ARIVED9")
+    hook.send("THE CLOUD HAS ARIVED\nJJJJJJJJJJJJJJJJ")
 elif (weatherid == 232):
-    hook.send("THE CLOUD HAS ARIVED10")
+    hook.send("THE CLOUD HAS ARIVED\nJJJJJJJJJJJJJJJJ")
 
 #Drizzle
 elif (weatherid == 300):
-    hook.send("THE CLOUD HAS ARIVED11")
+    hook.send("THE CLOUD HAS ARIVED\nJJJJJJJJJJJJJJJJ")
 elif (weatherid == 301):
-    hook.send("THE CLOUD HAS ARIVED12")
+    hook.send("THE CLOUD HAS ARIVED\nJJJJJJJJJJJJJJJJ")
 elif (weatherid == 302):
-    hook.send("THE CLOUD HAS ARIVED13")
+    hook.send("THE CLOUD HAS ARIVED\nJJJJJJJJJJJJJJJJ")
 elif (weatherid == 310):
-    hook.send("THE CLOUD HAS ARIVED14")
+    hook.send("THE CLOUD HAS ARIVED\nJJJJJJJJJJJJJJJJ")
 elif (weatherid == 311):
-    hook.send("THE CLOUD HAS ARIVED15")
+    hook.send("THE CLOUD HAS ARIVED\nJJJJJJJJJJJJJJJJ")
 elif (weatherid == 312):
-    hook.send("THE CLOUD HAS ARIVED16")
+    hook.send("THE CLOUD HAS ARIVED\nJJJJJJJJJJJJJJJJ")
 elif (weatherid == 313):
-    hook.send("THE CLOUD HAS ARIVED17")
+    hook.send("THE CLOUD HAS ARIVED\nJJJJJJJJJJJJJJJJ")
 elif (weatherid == 314):
-    hook.send("THE CLOUD HAS ARIVED18")
+    hook.send("THE CLOUD HAS ARIVED\nJJJJJJJJJJJJJJJJ")
 elif (weatherid == 321):
-    hook.send("THE CLOUD HAS ARIVED19")
+    hook.send("THE CLOUD HAS ARIVED\nJJJJJJJJJJJJJJJJ")
 
 #Rain
-elif (weatherid == 502):
-    hook.send("THE CLOUD HAS ARIVED20")
+#elif (weatherid == 502):
+    #hook.send("THE CLOUD HAS ARIVED\nJJJJJJJJJJJJJJJJ20")
 elif (weatherid == 503):
-    hook.send("THE CLOUD HAS ARIVED21")
+    hook.send("THE CLOUD HAS ARIVED\nJJJJJJJJJJJJJJJJ")
 elif (weatherid == 504):
-    hook.send("THE CLOUD HAS ARIVED22")
+    hook.send("THE CLOUD HAS ARIVED\nJJJJJJJJJJJJJJJJ")
 elif (weatherid == 511):
-    hook.send("THE CLOUD HAS ARIVED23")
+    hook.send("THE CLOUD HAS ARIVED\nJJJJJJJJJJJJJJJJ")
 elif (weatherid == 520):
-    hook.send("THE CLOUD HAS ARIVED24")
+    hook.send("THE CLOUD HAS ARIVED\nJJJJJJJJJJJJJJJJ")
 elif (weatherid == 521):
-    hook.send("THE CLOUD HAS ARIVED25")
+    hook.send("THE CLOUD HAS ARIVED\nJJJJJJJJJJJJJJJJ")
 elif (weatherid == 522):
-    hook.send("THE CLOUD HAS ARIVED26")
+    hook.send("THE CLOUD HAS ARIVED\nJJJJJJJJJJJJJJJJ")
 elif (weatherid == 531):
-    hook.send("THE CLOUD HAS ARIVED27")
-else:
-    hook.send("no cloud")
+    hook.send("THE CLOUD HAS ARIVED\nJJJJJJJJJJJJJJJJ")
 
 #Cloud Cover
-if (((cloud >= 70) and (cloud <= 100)) and ((weatherid == 500) or (weatherid == 501))):
-    hook.send("The cloud may be ariving")
+if ((cloud >= 70) and (cloud <= 100)):
+    print("The cloud may be ariving - source: clouds")
+if ((weatherid == 500) or (weatherid == 501) or (weatherid == 502)):
+    print("The cloud may be ariving - source: precipitation")
