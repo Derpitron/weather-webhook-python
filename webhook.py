@@ -8,7 +8,8 @@ url = 'http://api.openweathermap.org/data/2.5/weather?id=1264527&appid=0fd54c8d9
 while True:
 	res = requests.get(url)
 	data = res.json()
-	weatherid = data['weather'][0]['id']
+	weatherID1 = data['weather'][0]['id']
+	weatherID2 = weatherID1
 	cloud = data['clouds']['all']
 
 	def arive():
@@ -16,65 +17,67 @@ while True:
 	
 	def rainCheck():
 		#Thunderstorm
-		if (weatherid == 200):
+		if (weatherID1 == 200):
 			arive()
-		elif (weatherid == 201):
+		elif (weatherID1 == 201):
 			arive()
-		elif (weatherid == 202):
+		elif (weatherID1 == 202):
 			arive()
-		elif (weatherid == 210):
+		elif (weatherID1 == 210):
 			arive()
-		elif (weatherid == 211):
+		elif (weatherID1 == 211):
 			arive()
-		elif (weatherid == 212):
+		elif (weatherID1 == 212):
 			arive()
-		elif (weatherid == 221):
+		elif (weatherID1 == 221):
 			arive()
-		elif (weatherid == 230):
+		elif (weatherID1 == 230):
 			arive()
-		elif (weatherid == 231):
+		elif (weatherID1 == 231):
 			arive()
-		elif (weatherid == 232):
+		elif (weatherID1 == 232):
 			arive()
 
 		#Drizzle
-		elif (weatherid == 300):
+		elif (weatherID1 == 300):
 			arive()
-		elif (weatherid == 301):
+		elif (weatherID1 == 301):
 			arive()
-		elif (weatherid == 302):
+		elif (weatherID1 == 302):
 			arive()
-		elif (weatherid == 310):
+		elif (weatherID1 == 310):
 			arive()
-		elif (weatherid == 311):
+		elif (weatherID1 == 311):
 			arive()
-		elif (weatherid == 312):
+		elif (weatherID1 == 312):
 			arive()
-		elif (weatherid == 313):
+		elif (weatherID1 == 313):
 			arive()
-		elif (weatherid == 314):
+		elif (weatherID1 == 314):
 			arive()
-		elif (weatherid == 321):
+		elif (weatherID1 == 321):
 			arive()
 
 		#Rain
-		elif (weatherid == 503):
+		elif (weatherID1 == 503):
 			arive()
-		elif (weatherid == 504):
+		elif (weatherID1 == 504):
 			arive()
-		elif (weatherid == 511):
+		elif (weatherID1 == 511):
 			arive()
-		elif (weatherid == 520):
+		elif (weatherID1 == 520):
 			arive()
-		elif (weatherid == 521):
+		elif (weatherID1 == 521):
 			arive()
-		elif (weatherid == 522):
+		elif (weatherID1 == 522):
 			arive()
-		elif (weatherid == 531):
+		elif (weatherID1 == 531):
 			arive()
 
 	def send():
-		rainCheck()
+		if (weatherID1 != weatherID2):
+			rainCheck()
+
 		time.sleep(1200)
 		
 	send()
