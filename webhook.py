@@ -7,14 +7,12 @@ load_dotenv()
 api_url = os.getenv('API')
 hook = Webhook(os.getenv('HOOK'))
 x = 0
-
 while True:
 	response = requests.get(api_url)
 	data = response.json()
 	rainData = data['rain']
 	print("Polling the API")
 	isRaining = "rain" in rainData
-
 	if x == 0:
 		isRaining2 = False
 
