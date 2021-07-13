@@ -15,15 +15,12 @@ while True:
 	isRaining = "rain" in rainData
 	if x == 0:
 		isRaining2 = False
-
 	def rainCheck():
 		if ((isRaining) and (isRaining != isRaining2)):
 			hook.send("THE CLOUD HAS ARIVED")
 			hook.send("JJJJJJJJJJJJJJJJ")
-
 	def send():
 		rainCheck()
-
 	isRaining2 = isRaining
 	send()
 	x += 1
