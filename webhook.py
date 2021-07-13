@@ -4,11 +4,11 @@ import requests
 from dhooks import Webhook
 from dotenv import load_dotenv
 load_dotenv()
-api_url = os.getenv('API')
+api = os.getenv('API')
 hook = Webhook(os.getenv('HOOK'))
 x = 0
 while True:
-	response = requests.get(api_url)
+	response = requests.get(api)
 	data = response.json()
 	rainData = data['rain']
 	print("Polling the API")
