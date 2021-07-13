@@ -30,7 +30,6 @@ while True:
 		cloudCheck()
 		
 	send()
-	hook.send("ayo the pizza here")
 	time.sleep(300)
 	weatherID2 = weatherID1
 	cloud2 = cloud1
