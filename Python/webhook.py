@@ -17,13 +17,14 @@ while True:
 			hook.send("THE CLOUD HAS ARIVED")
 			hook.send("JJJJJJJJJJJJJJJJ")
 
+	def cloudCheck():
+    		if ((cloud >= 85) and (cloud <= 100)):
+    			hook.send("DARKNESS RISES")	
+
 	def send():
 		rainCheck()
+		cloudCheck()
 		time.sleep(1200)
 		
 	send()
-	#Cloud Cover
-	if ((cloud >= 85) and (cloud <= 100)):
-		print("DARKNESS RISES")
-
 	time.sleep(300)
