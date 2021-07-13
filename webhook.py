@@ -30,6 +30,8 @@ while True:
 		rainCheck()
 		cloudCheck()
 
+	hook.send("rain" in isRaining)
+
 	send()
 	x += 1
 	time.sleep(300)
