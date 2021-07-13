@@ -1,2 +1,3 @@
 dhooks
 requests
+python-dotenv

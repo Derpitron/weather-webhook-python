@@ -4,13 +4,11 @@ import requests
 from dhooks import Webhook
 from dotenv import load_dotenv
 load_dotenv()
-webhook_url = os.getenv('HOOK')
 api_url = os.getenv('API')
-hook = Webhook(webhook_url)
-url = api_url
+hook = Webhook(os.getenv('HOOK'))
 
 while True:
-	res = requests.get(url)
+	res = requests.get(api_url)
 	data = res.json()
 	weatherID1 = data['weather'][0]['id']
 	cloud1 = data['clouds']['all']
