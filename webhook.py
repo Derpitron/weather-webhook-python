@@ -6,30 +6,30 @@ from dotenv import load_dotenv
 load_dotenv()
 api_url = os.getenv('API')
 hook = Webhook(os.getenv('HOOK'))
+x = 0
 
 while True:
-	res = requests.get(api_url)
-	data = res.json()
-	weatherID1 = data['weather'][0]['id']
+	response = requests.get(api_url)
+	data = response.json()
+	isRaining = data['rain']
 	cloud1 = data['clouds']['all']
-	validWeather = ["200","201","202","210","211","212","221","230","231","232","300","301","302","310","311","312","313","314","321","502","503","504","511","520","521","522","530"]
+
+	if x == 0:
+		isRaining2 = isRaining
 
 	def rainCheck():
-		if weatherID1 in validWeather:
+		if (("rain" in data) and (isRaining != isRaining2)):
 			hook.send("THE CLOUD HAS ARIVED")
 			hook.send("JJJJJJJJJJJJJJJJ")
 
 	def cloudCheck():
-    		if (((cloud1 >= 85) and (cloud1 <= 100)) and (weatherID1 in validWeather == False)):
-    			hook.send("DARKNESS RISES")	
+			if (((cloud1 >= 85) and (cloud1 <= 100)) and ("rain" in isRaining == False)):
+				hook.send("DARKNESS RISES")
 
 	def send():
 		rainCheck()
 		cloudCheck()
-		
-	print(weatherID1)
 
 	send()
+	x += 1
 	time.sleep(300)
-	weatherID2 = weatherID1
-	cloud2 = cloud1
