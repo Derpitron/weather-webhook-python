@@ -7,6 +7,8 @@
   <groupId>me.derpitron</groupId>
   <artifactId>demo</artifactId>
   <version>0.1-SNAPSHOT</version>
+
+  <name>demo</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
