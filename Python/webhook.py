@@ -1,9 +1,13 @@
 import time
+import os
 import requests
 from dhooks import Webhook
-
-hook = Webhook("https://discord.com/api/webhooks/864098878671814666/Kwu2gG373bBfWIR8t40cWb36bQgKdwHr9C-YfgnqYAVIiJHT9b_CKfEbfbgjfsV4yvE2")
-url = 'http://api.openweathermap.org/data/2.5/weather?id=1264527&appid=0fd54c8d93dff4248d776d5644ef0946&units=metric'
+from dotenv import load_dotenv
+load_dotenv()
+webhook_url = os.getenv('HOOK')
+api_url = os.getenv('API')
+hook = Webhook(webhook_url)
+url = api_url
 
 while True:
 	res = requests.get(url)
