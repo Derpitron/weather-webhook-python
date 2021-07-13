@@ -14,15 +14,16 @@ while (true) {
 		var cloud1 = data['clouds']['all'];
 		const validWeather = ["200","201","202","210","211","212","221","230","231","232","300","301","302","310","311","312","313","314","321","503","504","511","520","521","522","530"];
 
+
 		function rainCheck() {
-			if (validWeather.includes(weatherID1) && (weatherID1 != weatherID2)) {
+			if ((validWeather.includes(weatherID1)) && (validWeather.includes(weatherID2) == false)) {
 				hook.send("THE CLOUD HAS ARIVED");
 				hook.send("JJJJJJJJJJJJJJJJ");
 			}
 		}
 
 		function cloudCheck() {
-			if (((cloud >= 85) && (cloud <= 100)) && (validWeather.includes(weatherID1) == false) && (cloud1 != cloud2)) {
+			if (((cloud1 >= 85) && (cloud1 <= 100)) && (validWeather.includes(weatherID1) == false) && ((cloud2 < 85))) {
 				hook.send("DARKNESS RISES");
 			}
 		}
