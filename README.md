@@ -13,3 +13,5 @@ then in .env change the placeholders to your discord webhook link and openweathe
 now run webhook.py. if you want to change the interval of the script just change the line at the bottom that says time.sleep(300). this means the default interval is 300 seconds (5 minutes). but you can change that if you want. If your openweathermap account is using the free plan, make sure to not exceed 60 calls per minute.
 
 you can run this both locally or on a service like heroku, just make sure that whatever service you use won't rate limit you and you have enough hours in it to keep it running for as long as you like. heroku gives free users 450 hours per month, idk about other services
+
+star this repo if you want, and follow me and Vishard for more cool projects like these
