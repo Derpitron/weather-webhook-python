@@ -27,7 +27,7 @@ while True:
 		rainCheck()
 		cloudCheck()
 	
-	hook.send(weatherID1 + " " + cloud1)
+	hook.send(weatherID1)
 		
 	send()
 	time.sleep(300)
