@@ -11,27 +11,22 @@ x = 0
 while True:
 	response = requests.get(api_url)
 	data = response.json()
-	isRaining = data['rain']
-	cloud1 = data['clouds']['all']
+	rainData = data['rain']
+	print("Polling the API")
+	isRaining = "rain" in rainData
 
 	if x == 0:
-		isRaining2 = isRaining
+		isRaining2 = False
 
 	def rainCheck():
-		if (("rain" in data) and (isRaining != isRaining2)):
+		if ((isRaining) and (isRaining != isRaining2)):
 			hook.send("THE CLOUD HAS ARIVED")
 			hook.send("JJJJJJJJJJJJJJJJ")
 
-	def cloudCheck():
-			if (((cloud1 >= 85) and (cloud1 <= 100)) and ("rain" in isRaining == False)):
-				hook.send("DARKNESS RISES")
-
 	def send():
 		rainCheck()
-		cloudCheck()
 
-	hook.send("rain" in isRaining)
-
+	isRaining2 = isRaining
 	send()
 	x += 1
 	time.sleep(300)
