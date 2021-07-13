@@ -11,7 +11,6 @@ while True:
 	response = requests.get(api)
 	data = response.json()
 	rainData = data['rain']
-	print("Polling the API")
 	isRaining = "rain" in rainData
 	if x == 0:
 		isRaining2 = False
