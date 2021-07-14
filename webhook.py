@@ -4,6 +4,7 @@ import requests
 from dhooks import Webhook
 from dotenv import load_dotenv
 load_dotenv()
+hook = Webhook(os.getenv('HOOK'))
 x = 0
 while True:
 	response = requests.get(os.getenv('API'))
@@ -12,13 +13,13 @@ while True:
 	isRaining = "rain" in rainData
 	if x == 0:
 		isRaining2 = False
+		if x >= 3:
+			x = 1
 	def rainCheck():
 		if ((isRaining) and (isRaining != isRaining2)):
-			Webhook(os.getenv('HOOK')).send("THE CLOUD HAS ARIVED")
-			Webhook(os.getenv('HOOK')).send("JJJJJJJJJJJJJJJJ")
-	def send():
-		rainCheck()
+			hook.send("THE CLOUD HAS ARIVED")
+			hook.send("JJJJJJJJJJJJJJJJ")
 	isRaining2 = isRaining
-	send()
+	rainCheck()
 	x += 1
-	time.sleep(300)
+	time.sleep(60)
