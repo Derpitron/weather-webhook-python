@@ -21,4 +21,4 @@ while True:
 		rainCheck()
 		print(x)
 		x = True
-		time.sleep(60)
+	time.sleep(90)
