@@ -9,16 +9,16 @@ x = False
 while True:
 	response = requests.get(os.getenv('API'))
 	data = response.json()
-	rainData = data['rain']
-	isRaining = "rain" in rainData
-	if x == False:
-		isRaining2 = False
-	def rainCheck():
-		if ((isRaining) and (isRaining != isRaining2)):
-			hook.send("THE CLOUD HAS ARIVED")
-			hook.send("JJJJJJJJJJJJJJJJ")
-	isRaining2 = isRaining
-	rainCheck()
-	print(x)
-	x = True
-	time.sleep(60)
+	if 'rain' in data:
+		rainData = data['rain']
+		isRaining = 'rain' in rainData
+		if x == False:
+			isRaining2 = False
+		def rainCheck():
+			if ((isRaining) and (isRaining != isRaining2)):
+				hook.send('THE CLOUD HAS ARIVED\nJJJJJJJJJJJJJJJJ')
+		isRaining2 = isRaining
+		rainCheck()
+		print(x)
+		x = True
+		time.sleep(60)
