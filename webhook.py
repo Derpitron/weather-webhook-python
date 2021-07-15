@@ -6,14 +6,15 @@ from dotenv import load_dotenv
 from socket import gethostname
 from datetime import datetime
 from pytz import timezone
-localtz = datetime.now(timezone('TIMEZONE'))
+from traceback import format_exc
 load_dotenv()
-hook = Webhook(getenv('HOOK'))
 debug = Webhook(getenv('DEBUG'))
-debug.send("Script started on " + gethostname() + " at " + localtz.strftime('%H:%M:%S'))
-x = False
-while True:
-	try:
+localtz = datetime.now(timezone(getenv('TIMEZONE')))
+try:
+	hook = Webhook(getenv('HOOK'))
+	x = False
+	debug.send("Script started successfully on " + gethostname() + " at " + localtz.strftime('%H:%M:%S'))
+	while True:
 		response = get(getenv('API'))
 		data = response.json()
 		if 'rain' in data:
@@ -27,6 +28,8 @@ while True:
 			isRaining2 = isRaining
 			rainCheck()
 			x = True
-		time.sleep(getenv('INTERVAL'))
-	except Exception as error:
-		debug.send(error)
+		time.sleep(int(getenv('INTERVAL')))
+except Exception:
+	error = format_exc()
+	debug.send("Script failed on " + gethostname() + " at " + localtz.strftime('%H:%M:%S'))
+	debug.send("```" + error + "```")
