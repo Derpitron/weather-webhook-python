@@ -5,8 +5,8 @@ from dhooks import Webhook
 from dotenv import load_dotenv
 from socket import gethostname
 from datetime import datetime
-import pytz
-localtz = datetime.now(pytz.timezone('Asia/Kolkata'))
+from pytz import timezone
+localtz = datetime.now(timezone('TIMEZONE'))
 load_dotenv()
 hook = Webhook(getenv('HOOK'))
 debug = Webhook(getenv('DEBUG'))
