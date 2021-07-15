@@ -26,7 +26,6 @@ while True:
 					hook.send('THE CLOUD HAS ARIVED\nJJJJJJJJJJJJJJJJ')
 			isRaining2 = isRaining
 			rainCheck()
-			print(x)
 			x = True
 		time.sleep(getenv('INTERVAL'))
 	except Exception as error:
