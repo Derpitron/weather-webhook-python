@@ -28,6 +28,6 @@ while True:
 			rainCheck()
 			print(x)
 			x = True
-		time.sleep(30)
+		time.sleep(getenv('INTERVAL'))
 	except Exception as error:
 		debug.send(error)
