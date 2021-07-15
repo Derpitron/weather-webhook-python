@@ -1,15 +1,20 @@
 import time
-import os
-import requests
+from os import getenv
+from requests import get
 from dhooks import Webhook
 from dotenv import load_dotenv
+from socket import gethostname
+from datetime import datetime
+import pytz
+localtz = datetime.now(pytz.timezone('Asia/Kolkata'))
 load_dotenv()
-hook = Webhook(os.getenv('HOOK'))
-debug = Webhook(os.getenv('DEBUG'))
+hook = Webhook(getenv('HOOK'))
+debug = Webhook(getenv('DEBUG'))
+debug.send("Script started on " + gethostname() + " at " + localtz.strftime('%H:%M:%S'))
 x = False
 while True:
 	try:
-		response = requests.get(os.getenv('API'))
+		response = get(getenv('API'))
 		data = response.json()
 		if 'rain' in data:
 			rainData = data['rain']
