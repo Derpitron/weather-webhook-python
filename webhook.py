@@ -13,23 +13,26 @@ localtz = datetime.now(timezone(getenv('TIMEZONE')))
 try:
 	hook = Webhook(getenv('HOOK'))
 	x = False
-	debug.send("Script started successfully on " + gethostname() + " at " + localtz.strftime('%H:%M:%S'))
+	debug.send("Script started on " + gethostname() + " at " + getenv('TIMEZONE') + " - " + localtz.strftime('%H:%M:%S') + " with interval of `" + getenv('INTERVAL') + "` seconds")
 	while True:
 		response = get(getenv('API'))
 		data = response.json()
-		if 'rain' in data:
-			rainData = data['rain']
-			isRaining = 'rain' in rainData
+		isRaining = "rain" in data
+		if isRaining:
 			if x == False:
-				isRaining2 = False
+				isRainingTest = False
 			def rainCheck():
-				if ((isRaining) and (isRaining != isRaining2)):
-					hook.send('THE CLOUD HAS ARIVED\nJJJJJJJJJJJJJJJJ')
-			isRaining2 = isRaining
+				if ((isRaining) and (isRaining != isRainingTest)):
+					hook.send("THE CLOUD HAS ARIVED\nJJJJJJJJJJJJJJJJ")
+			isRainingTest = isRaining
 			rainCheck()
 			x = True
+		if isRaining:
+			debug.send("It is currently raining according to OpenWeatherMap")
+		else:
+			debug.send("It is not currently raining according to OpenWeatherMap")
 		time.sleep(int(getenv('INTERVAL')))
 except Exception:
 	error = format_exc()
-	debug.send("Script failed on " + gethostname() + " at " + localtz.strftime('%H:%M:%S'))
+	debug.send("Script failed on " + gethostname() + " at " + "`" + getenv('TIMEZONE') + "`" + localtz.strftime('%H:%M:%S'))
 	debug.send("```" + error + "```")
