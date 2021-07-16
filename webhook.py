@@ -19,7 +19,7 @@ try:
 	while True:
 		response = get(getenv("API"))
 		data = response.json()
-		if 'rain' in data:
+		if ('rain' in data == True):
 			isRaining = 'rain' in data
 			if x == False:
 				isRainingTest = False
