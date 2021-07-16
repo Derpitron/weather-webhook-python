@@ -19,12 +19,10 @@ try:
 	while True:
 		response = get(getenv("API"))
 		data = response.json()
-		print('rain' in data)
-		isRaining = 'rain' in data
-		if isRaining:
+		if 'rain' in data:
+			isRaining = 'rain' in data
 			if x == False:
 				isRainingTest = False
-
 			def rainCheck():
 				if ((isRaining == True) and (isRaining != isRainingTest)):
 					hook.send("THE CLOUD HAS ARIVED\nJJJJJJJJJJJJJJJJ")
