@@ -19,15 +19,13 @@ try:
 	while True:
 		response = get(getenv("API"))
 		data = response.json()
-		if ('rain' in data == True):
-			isRaining = 'rain' in data
+		isRaining = 'rain' in data
+		if (isRaining == True):
 			if x == False:
 				isRainingTest = False
-			def rainCheck():
-				if ((isRaining == True) and (isRaining != isRainingTest)):
-					hook.send("THE CLOUD HAS ARIVED\nJJJJJJJJJJJJJJJJ")
+			if ((isRaining == True) and (isRaining != isRainingTest)):
+				hook.send("THE CLOUD HAS ARIVED\nJJJJJJJJJJJJJJJJ")
 			isRainingTest = isRaining
-			rainCheck()
 			x = True
 		time.sleep(int(getenv('INTERVAL')))
 except Exception:
