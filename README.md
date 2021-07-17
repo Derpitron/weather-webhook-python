@@ -1,4 +1,4 @@
-# Discord Weather Webhook
+# Discord Weather Webhook - Python Flavor
 This is a script which pulls current weather from OpenWeatherMap and if it is raining, then it sends a message to a specified Discord webhook. 
 
 # Unique features of this script?
