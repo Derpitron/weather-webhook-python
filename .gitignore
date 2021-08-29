@@ -2,7 +2,3 @@
 .env
 /.env
 /.vscode
-/.idea
-/.target
-*.jar
-*.MF
