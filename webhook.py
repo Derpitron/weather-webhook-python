@@ -24,7 +24,8 @@ try:
 			if x == False:
 				isRainingTest = False
 			if ((isRaining == True) and (isRaining != isRainingTest)):
-				hook.send("THE CLOUD HAS ARIVED\nJJJJJJJJJJJJJJJJ")
+				if (data['rain']['1h'] >= 1.50):
+					hook.send("THE CLOUD HAS ARIVED\nJJJJJJJJJJJJJJJJ")
 			isRainingTest = isRaining
 			x = True
 		time.sleep(int(os.getenv('INTERVAL')))
