@@ -14,21 +14,32 @@ debug = Webhook(os.getenv('DEBUG'))
 localtz = datetime.now(timezone(os.getenv('TIMEZONE')))
 try:
 	hook = Webhook(os.getenv('HOOK'))
-	x = False
+	firstRun = False
 	debug.send("Script started on " + gethostname() + " with process ID: `" + str(os.getpid()) + "` at " + os.getenv('TIMEZONE') + " - " + localtz.strftime('%H:%M:%S') + " with interval of `" + os.getenv('INTERVAL') + "` seconds")
 	while True:
-		response = get(os.getenv("API"))
-		data = response.json()
-		isRaining = 'rain' in data
+		data1 = get(os.getenv("API1")).json()
+		data2 = get(os.getenv("API2")).json()
+		data3 = get(os.getenv("API3")).json()
+		isRaining1 = 'rain' in data1
+		isRaining2 = 'rain' in data2
+		isRaining3 = 'rain' in data3
+		if ('rain' in data1):
+			isRaining = 
+		if ('rain' in data2):
+			isRaining = isRaining2
+		if ('rain' in data3):
+			isRaining = isRaining3
+
 		if (isRaining == True):
-			if x == False:
+			if firstRun == False:
 				isRainingTest = False
-			if ((isRaining == True) and (isRaining != isRainingTest)):
-				if (data['rain']['1h'] >= 1.50):
+			if (isRaining != isRainingTest):
+				if ( >= 1.50):
 					hook.send("THE CLOUD HAS ARIVED\nJJJJJJJJJJJJJJJJ")
-			isRainingTest = isRaining
-			x = True
+			isRainingTest = isRaining1
+			firstRun = True
 		time.sleep(int(os.getenv('INTERVAL')))
+
 except Exception:
 	error = format_exc()
 	debug.send("Script failed on " + gethostname() + " at " + "`" + os.getenv('TIMEZONE') + "`" + localtz.strftime('%H:%M:%S'))
