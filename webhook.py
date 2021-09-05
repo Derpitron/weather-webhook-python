@@ -36,7 +36,7 @@ try:
 			if firstRun == False:
 				isRainingTest = False
 			if (isRaining != isRainingTest):
-				if (rainFallQuantity >= 1.50): #If the rainfall quantity is equal to or more than 1.50mm
+				if (rainFallQuantity >= 0.30): #If the rainfall quantity is equal to or more than 0.30mm
 					hook.send("THE CLOUD HAS ARIVED\nJJJJJJJJJJJJJJJJ")
 			isRainingTest = isRaining
 			firstRun = True
