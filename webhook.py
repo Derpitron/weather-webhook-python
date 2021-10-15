@@ -21,6 +21,7 @@ try:
 		data1 = get(os.getenv("API1")).json()
 		data2 = get(os.getenv("API2")).json()
 		data3 = get(os.getenv("API3")).json()
+
 		if ('rain' in data1):
 			isRaining = 'rain' in data1
 			rainFallQuantity = data1['rain']['1h']
@@ -30,8 +31,9 @@ try:
 		elif ('rain' in data3):
 			isRaining = 'rain' in data3
 			rainFallQuantity = data2['rain']['1h']
-
-		#The meat and potatoes of this program
+		else:
+			continue
+		#The main part of this program
 		if (isRaining == True):
 			if firstRun == False:
 				isRainingTest = False
