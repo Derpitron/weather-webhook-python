@@ -24,12 +24,12 @@ try:
 		if ('rain' in data1):
 			isRaining = 'rain' in data1
 			rainFallQuantity = data1['rain']['1h']
-		if ('rain' in data2):
+		elif ('rain' in data2):
 			isRaining = 'rain' in data2
 			rainFallQuantity = data2['rain']['1h']
-		if ('rain' in data3):
+		elif ('rain' in data3):
 			isRaining = 'rain' in data3
-			rainFallQuantity = data3['rain']['1h']
+			rainFallQuantity = data2['rain']['1h']
 
 		#The meat and potatoes of this program
 		if (isRaining == True):
