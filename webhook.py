@@ -25,7 +25,6 @@ def main():
 			rainData = ['data1', 'data2', 'data3']
 			isRaining = any(rainData)
 			#rainFallQuantities of each weather source
-			rainFallQuantity = rainFallQuantity = data1['rain']['1h']
 			if ('rain' in data1):
 				rainFallQuantity = data1['rain']['1h']
 			elif ('rain' in data2):
@@ -47,7 +46,7 @@ def main():
 	#Error Handling
 	except Exception:
 		error = format_exc()
-		debug.send("Script failed on " + gethostname() + " at " + "`" + os.getenv('TIMEZONE') + "`" + localtz.strftime('%H:%M:%S'))
+		debug.send("@everyone Script failed on " + gethostname() + " at " + "`" + os.getenv('TIMEZONE') + "`" + localtz.strftime('%H:%M:%S'))
 		debug.send("```" + error + "```")
 
 if __name__ == "__main__":
