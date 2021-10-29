@@ -47,7 +47,7 @@ def main():
 	except Exception:
 		error = format_exc()
 		debug.send("@everyone Script failed on " + gethostname() + " at " + "`" + os.getenv('TIMEZONE') + "`" + localtz.strftime('%H:%M:%S'))
-		debug.send("```" + error + "```")
+		debug.send("```py" + error + "```")
 
 if __name__ == "__main__":
 	main()
