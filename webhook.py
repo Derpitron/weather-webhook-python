@@ -20,7 +20,7 @@ def main():
 		
 		while True:
 			#Setting up the variables
-			data = get(os.getenv("API1")).json()
+			data = get(os.getenv("API")).json()
 			isRaining = ('rain' in data)
 			rainFallQuantity = data['rain']['1h']
 
