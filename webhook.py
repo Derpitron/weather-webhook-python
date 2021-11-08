@@ -20,35 +20,24 @@ def main():
 		
 		while True:
 			#Setting up the variables
-			data1 = get(os.getenv("API1")).json()
-			data2 = get(os.getenv("API2")).json()
-			data3 = get(os.getenv("API3")).json()
-			rainData = [('rain' in data1), ('rain' in data2), ('rain' in data3)]
-			isRaining = any(rainData)
-			
-			#rainFallQuantities of each weather source
-			if ('rain' in data1):
-				rainFallQuantity = data1['rain']['1h']
-			elif ('rain' in data2):
-				rainFallQuantity = data2['rain']['1h']
-			elif ('rain' in data3):
-				rainFallQuantity = data3['rain']['1h']
+			data = get(os.getenv("API1")).json()
+			isRaining = ('rain' in data)
+			rainFallQuantity = data['rain']['1h']
 
 			#The main part of the program
-			if (isRaining == True):
-				if firstRun == True:
-					isRainingLastIter = False
-				if (isRaining != isRainingLastIter):
-					if (rainFallQuantity >= 0.30): #If the rainfall quantity is equal to or more than 0.30mm
-						hook.send("THE CLOUD HAS ARIVED\nJJJJJJJJJJJJJJJJ")
+			if firstRun == True:
+				isRainingLastIter = False
+			if ((isRaining != isRainingLastIter) and (isRaining == True)):
+				if (rainFallQuantity >= 0.30): #If the rainfall quantity is equal to or more than 0.30mm
+					hook.send("THE CLOUD HAS ARIVED\nJJJJJJJJJJJJJJJJ")
 				isRainingLastIter = isRaining
-				firstRun = False
+			firstRun = False
 			time.sleep(int(os.getenv('INTERVAL')))
 
-	#Error Handling
+	#Error """Handling"""
 	except Exception:
 		error = format_exc()
-		debug.send("@everyone Script failed on " + gethostname() + " at " + "`" + os.getenv('TIMEZONE') + "`" + localtz.strftime('%H:%M:%S'))
+		debug.send("@everyone Script failed on " + gethostname() + " at " + "`" + os.getenv('TIMEZONE') + "`" + localtz.strftime('%H:%M:%S')) #Pings everyone lol
 		debug.send("```" + error + "```")
 
 if __name__ == "__main__":
