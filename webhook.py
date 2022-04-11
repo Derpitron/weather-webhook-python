@@ -22,17 +22,18 @@ def main():
 			#Setting up the variables
 			data = get(os.getenv("API")).json()
 			isRaining = ('rain' in data)
-			rainFallQuantity = data['rain']['1h']
+			if isRaining == True:
+                            rainFallQuantity = data['rain']['1h']
 
-			#The main part of the program
-			if firstRun == True:
-				isRainingLastIter = False
-			if ((isRaining != isRainingLastIter) and (isRaining == True)):
-				if (rainFallQuantity >= 0.30): #If the rainfall quantity is equal to or more than 0.30mm
-					hook.send("THE CLOUD HAS ARIVED\nJJJJJJJJJJJJJJJJ")
-				isRainingLastIter = isRaining
-			firstRun = False
-			time.sleep(int(os.getenv('INTERVAL')))
+                            #The main part of the program
+                            if firstRun == True:
+                                    isRainingLastIter = False
+                            if ((isRaining != isRainingLastIter) and (isRaining == True)):
+                                    if (rainFallQuantity >= 0.30): #If the rainfall quantity is equal to or more than 0.30mm
+                                            hook.send("THE CLOUD HAS ARIVED\nJJJJJJJJJJJJJJJJ")
+                                    isRainingLastIter = isRaining
+                            firstRun = False
+                            time.sleep(int(os.getenv('INTERVAL')))
 
 	#Error """Handling"""
 	except Exception:
